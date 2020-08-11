@@ -22,22 +22,24 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Budget Calculator'),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: <Widget>[
-          Container(
-            width: double.infinity,
-            child: Card(
-              child: Container(
-                width: double.infinity,
-                color: Colors.blue,
-                child: Text('Chart!'),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: <Widget>[
+            Container(
+              width: double.infinity,
+              child: Card(
+                child: Container(
+                  width: double.infinity,
+                  color: Colors.blue,
+                  child: Text('Chart!'),
+                ),
+                elevation: 5,
               ),
-              elevation: 5,
             ),
-          ),
-          UserTransactions(),
-        ],
+            UserTransactions(),
+          ],
+        ),
       ),
     );
   }
