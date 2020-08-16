@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import './models/transaction.dart';
 import './widgets/transaction_list.dart';
 import './widgets/new_transaction.dart';
-import './widgets/transaction_list.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,8 +15,24 @@ class MyApp extends StatelessWidget {
       title: 'Budget Calculator',
       home: MyHomePage(),
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          primarySwatch: Colors.blue,
+          fontFamily: 'Quicksand',
+          textTheme: ThemeData.light().textTheme.copyWith(
+                title: TextStyle(
+                  fontFamily: 'OpenSans',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),
+              ),
+          appBarTheme: AppBarTheme(
+            textTheme: ThemeData.light().textTheme.copyWith(
+                  title: TextStyle(
+                    fontFamily: 'OpenSans',
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+          )),
     );
   }
 }
@@ -67,7 +82,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Budget Calculator'),
+        title: Text(
+          'Budget Calculator',
+        ),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.add),
